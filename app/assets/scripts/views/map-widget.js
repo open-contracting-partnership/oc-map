@@ -313,7 +313,7 @@ var MapWidget = React.createClass({
 
     let content_ogp = _.map(country.ogp_commitments, (o, i) => {
       return (
-        <li key={i}>OGP: <a href={o.ogp_commitment_link} target='_blank'>{o.ogp_commitment}</a></li>
+        <li key={i}><a href={o.ogp_commitment_link} target='_blank'>{o.ogp_commitment}</a></li>
       );
     });
 
