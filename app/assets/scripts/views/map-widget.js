@@ -179,7 +179,7 @@ var MapWidget = React.createClass({
 
   setCountryStyle: function (layer) {
     // Invalid.
-    if (!layer.feature.properties.has_data) {
+    if (!layer.feature.properties.has_data || layer.feature.properties.disclosure_oil_mining) {
       layer.setStyle(this.layerStyles.nodata);
       return;
     }
@@ -219,7 +219,12 @@ var MapWidget = React.createClass({
   },
 
   onEachLayer: function (layer) {
+
     this.setCountryStyle(layer);
+
+	if ( layer.feature.properties.disclosure_oil_mining) {
+  		return;
+	}
 
     layer
       .on('click', e => {
@@ -316,15 +321,6 @@ var MapWidget = React.createClass({
         <li key={i}><a href={o.ogp_commitment_link} target='_blank'>{o.ogp_commitment}</a></li>
       );
     });
-
-    let content;
-    if (country.commitment_oil_mining) {
-      if (country.commitment_oil_mining) {
-        content = <li>Oil and Mining: <a href={country.commitment_oil_mining_link} target='_blank'>{country.commitment_oil_mining}</a></li>;
-      } else {
-        content = <li>Oil and Mining: {country.commitment_oil_mining}</li>;
-      }
-    }
 
     return <div><h3>Commitments</h3><ul>{content_ogp}{content}</ul></div>;
   },
