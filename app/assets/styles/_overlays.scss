@@ -77,14 +77,13 @@
   .drop__menu {
     @extend .clearfix;
     list-style: none;
-    margin: (-$global-spacing) (-$global-spacing) $global-spacing (-$global-spacing);
+    margin: 0;
     box-shadow: 0 1px 0 0 $base-alpha-color;
-    padding: ($global-spacing / 2) 0;
+    padding: 0;
     line-height: inherit;
     font-size: inherit;
 
     &:last-child {
-      margin-bottom: (-$global-spacing);
       box-shadow: none;
     }
 
@@ -97,7 +96,6 @@
       &:hover,
       &:focus {
         color: $link-color;
-        background-color: tint($link-color, 92%);
         opacity: 1;
       }
     }
@@ -106,21 +104,27 @@
   /* Select modifier */
 
   .drop__menu--select {
-    .drop__menu-item {
-      padding-right: $global-spacing * 3;
-    }
+	.drop__menu-item {
+		padding: 24px 24px 28px;
+
+		&:before {
+			content: '/';
+			position: absolute;
+			left: 0;
+		}
+	}
     .drop__menu-item--active {
       color: inherit;
       outline: 0;
       &:after {
-        @extend .collecticons-sm-tick;
+	    content: '';
         position: absolute;
         z-index: 1;
-        top: $global-spacing / 4;
-        right: $global-spacing;
-        font-size: 1.25rem;
-        line-height: 1.5rem;
-        opacity: 0.48;
+        bottom: 0;
+		left: 0;
+		right: 0;
+		height: 6px;
+		background-color: #d7de1f;
       }
     }
   }

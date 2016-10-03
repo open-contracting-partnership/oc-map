@@ -66,7 +66,7 @@
       color: $primary-color;
       font-size: 1.75rem;
       padding-right: 1rem;
-      margin-bottom: 1rem; 
+      margin-bottom: 1rem;
     }
     h3 {
       font-size: 1rem;
@@ -79,7 +79,7 @@
     .godi {
       font-style: italic;
       margin-top: -0.5rem;
-    } 
+    }
     &-link {
       font-size: 0.875rem;
       margin-top: 1rem;
@@ -87,25 +87,31 @@
   }
 
   &__actions {
-    background-color: $base-color;
-    padding: 0.75rem 0.75rem 0.75rem 1rem;
-    color: #fff;
-    text-transform: uppercase;
+	border-top: 1px solid #d8d8e0;
+    padding: 0 0.75rem 0 1rem;
+    color: $base-color;
     font-family: $display-font-family;
     font-size: 0.8rem;
 
     &-description {
+	  text-transform: uppercase;
+	  font-weight: bold;
       margin-right: 1rem;
     }
 
     .drop__menu {
-      width: 20rem;
 
       li {
         padding: 0;
-        text-transform: uppercase;
+		margin: 0;
         font-size: 0.8rem;
+		display: inline-block;
       }
+
+	  a {
+		display: block;
+		font-size: .9rem;
+	  }
     }
   }
 }
