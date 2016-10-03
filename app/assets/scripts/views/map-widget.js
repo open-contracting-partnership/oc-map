@@ -341,17 +341,13 @@ var MapWidget = React.createClass({
           <div className='ocp-map__actions'>
             <span className='ocp-map__actions-description'>View by</span>
 
-            <Dropdown element='span' className='drop drop--down drop--align-left'
-              triggerTitle='View map by'
-              triggerText={viewFilterMatrix[this.state.viewFilter]}
-              triggerClassName='drop__toggle'>
+            <Dropdown element='span' className='drop drop--down drop--align-left'>
 
               <ul className='drop__menu drop__menu--select'>
                 {_.map(viewFilterMatrix, (o, i) => {
                   return (
                     <li key={i}><a href=''
                       className={classnames('drop__menu-item', {'drop__menu-item--active': this.state.viewFilter === i})}
-                      data-hook='dropdown:close'
                       onClick={this.viewFilterClickHandler.bind(null, i)}>{o}</a></li>
                   );
                 })}
