@@ -256,7 +256,9 @@ var MapWidget = React.createClass({
   },
 
   setupMap: function () {
-    var map = L.map(this.refs.mapHolder).setView([51.505, -0.09], 2);
+    var map = L.map(this.refs.mapHolder, {
+		scrollWheelZoom: false
+	}).setView([51.505, -0.09], 2);
     this.mapCountryLayer = omnivore.topojson.parse(this.state.mapTopoJSON)
       .eachLayer(this.onEachLayer)
       .addTo(map);
