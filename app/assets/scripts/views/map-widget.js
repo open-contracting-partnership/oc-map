@@ -339,7 +339,7 @@ var MapWidget = React.createClass({
         <header className='ocp-map__header'>
           <h1 className='ocp-map__title'>Open Contracting Map</h1>
           <div className='ocp-map__actions'>
-            <span className='ocp-map__actions-description'>View by:</span>
+            <span className='ocp-map__actions-description'>View by</span>
 
             <Dropdown element='span' className='drop drop--down drop--align-left'
               triggerTitle='View map by'
