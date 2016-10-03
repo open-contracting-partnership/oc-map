@@ -324,7 +324,7 @@ var MapWidget = React.createClass({
       );
     });
 
-    return <div><h3>Commitments</h3><ul>{content_ogp}{content}</ul></div>;
+    return <div><h3>Commitments</h3><ul>{content_ogp}</ul></div>;
   },
 
   render: function () {
