@@ -6,7 +6,7 @@ import L from 'leaflet';
 import classnames from 'classnames';
 import _ from 'lodash';
 import omnivore from 'leaflet-omnivore';
-import Dropdown from '../components/dropdown';
+import Filter from '../components/filter';
 
 const mapTopoJSON = 'https://raw.githubusercontent.com/open-contracting-partnership/ocp-data/publish/oc-status/_map.json';
 const godiScores = 'http://index.okfn.org/api/entries.json';
@@ -341,7 +341,7 @@ var MapWidget = React.createClass({
           <div className='ocp-map__actions'>
             <span className='ocp-map__actions-description'>View by</span>
 
-            <Dropdown element='span' className='drop drop--down drop--align-left'>
+            <Filter element='span' className='drop drop--down drop--align-left'>
 
               <ul className='drop__menu drop__menu--select'>
                 {_.map(viewFilterMatrix, (o, i) => {
@@ -352,7 +352,7 @@ var MapWidget = React.createClass({
                   );
                 })}
               </ul>
-            </Dropdown>
+            </Filter>
           </div>
         </header>
         <div className='ocp-map__body'>

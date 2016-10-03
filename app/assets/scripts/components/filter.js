@@ -1,8 +1,8 @@
 'use strict';
 import React from 'react';
 
-const Dropdown = React.createClass({
-  displayName: 'Dropdown',
+const Filter = React.createClass({
+  displayName: 'Filter',
 
   propTypes: {
     className: React.PropTypes.string,
@@ -31,4 +31,4 @@ const Dropdown = React.createClass({
   }
 });
 
-module.exports = Dropdown;
+module.exports = Filter;
