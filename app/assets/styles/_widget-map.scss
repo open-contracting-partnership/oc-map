@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .ocp-map {
+  background-color: $tertiary-color;
+
   &__title {
     @extend .visually-hidden;
   }
@@ -10,10 +12,16 @@
   &__body {
     position: relative;
     overflow: hidden;
+	background: #DDDDDD;
   }
 
   &__map {
     min-height: 500px;
+  }
+
+  &__header {
+	float: left;
+	max-width: 353px;
   }
 
   &__content-wrapper {
@@ -25,14 +33,14 @@
     overflow: auto;
     min-width: 20rem;
     width: 33.333%;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
     background-color: #fff;
     opacity: 0;
 
     transition: right 0.24s ease 0s, opacity 0.24s ease 0.1s;
 
     &.ocp-revealed {
-      right: 0;
+      right: 3rem;
       opacity: 1;
       transition: right 0.24s ease 0.1s, opacity 0.24s ease 0s;
     }
@@ -88,16 +96,9 @@
 
   &__actions {
 	border-top: 1px solid #d8d8e0;
-    padding: 0 0.75rem 0 1rem;
-    color: $base-color;
+    color: white;
     font-family: $display-font-family;
     font-size: 0.8rem;
-
-    &-description {
-	  text-transform: uppercase;
-	  font-weight: bold;
-      margin-right: 1rem;
-    }
 
     .drop__menu {
 
@@ -105,12 +106,11 @@
         padding: 0;
 		margin: 0;
         font-size: 0.8rem;
-		display: inline-block;
       }
 
 	  a {
 		display: block;
-		font-size: .9rem;
+		font-size: 18px;
 	  }
     }
   }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div class="oc-map--map-widget"><!-- Widget renders here --></div>
+	<script>
+	  OC_MAP.initMapWidget(document.querySelector('.oc-map--map-widget'));
+	</script>
+
+	<div class="oc-map--table-widget"><!-- Widget renders here --></div>
+	<script>
+	  OC_MAP.initTableWidget(document.querySelector('.oc-map--table-widget'));
+	</script>
+
+	<link rel="stylesheet" href="main.css">
+	<script src="vendor.js"></script>
+	<script src="bundle.js"></script>
+
+</body>
+</html>
