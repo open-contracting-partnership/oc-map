@@ -179,9 +179,11 @@ var MapWidget = React.createClass({
 
   setCountryStyle: function (layer) {
     // Invalid.
-    if (!layer.feature.properties.has_data || layer.feature.properties.disclosure_oil_mining) {
-      layer.setStyle(this.layerStyles.nodata);
-      return;
+    if (!layer.feature.properties.has_data || layer.feature.properties.disclosure_oil_mining ) {
+			if ( layer.feature.properties.disclosure_oil_mining != "none" ) {
+	      layer.setStyle(this.layerStyles.nodata);
+	      return;
+			}
     }
 
     // Active layer.
@@ -222,9 +224,9 @@ var MapWidget = React.createClass({
 
     this.setCountryStyle(layer);
 
-	if ( layer.feature.properties.disclosure_oil_mining) {
-  		return;
-	}
+		if ( layer.feature.properties.disclosure_oil_mining && layer.feature.properties.disclosure_oil_mining != "none") {
+	  		return;
+		}
 
     layer
       .on('click', e => {
@@ -300,7 +302,7 @@ var MapWidget = React.createClass({
   },
 
   renderInnovations: function (innovations) {
-    if (!innovations.length) {
+    if (!innovations.length || innovations[0].innovation_link.length <= 1) {
       return;
     }
 
