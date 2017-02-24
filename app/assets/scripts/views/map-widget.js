@@ -14,9 +14,9 @@ const godiSlugs = 'http://index.okfn.org/api/places.json';
 
 const viewFilterMatrix = {
   all: 'Everything',
-  ocds: 'OCDS',
-  commitments: 'OGP Relevant commitments',
-  contracts: 'Publishing contracts'
+  ocds: 'Publishing open contracting data',
+  commitments: 'Related commitments',
+  contracts: 'Innovation in contract monitoring and data use'
 };
 
 const ocdsMatrix = {
@@ -46,18 +46,18 @@ var MapWidget = React.createClass({
       fillColor: '#F4F4F4'
     },
     hover: {
-      color: '#C2DC16',
+      color: '#C7CC48',
       weight: 1,
       opacity: 1,
       fillOpacity: 0.5,
-      fillColor: '#C2DC16'
+      fillColor: '#C7CC48'
     },
     active: {
-      color: '#C2DC16',
+      color: '#C7CC48',
       weight: 1,
       opacity: 1,
       fillOpacity: 1,
-      fillColor: '#C2DC16'
+      fillColor: '#C7CC48'
     },
     lilac: {
       color: '#6C75E1',
@@ -339,7 +339,6 @@ var MapWidget = React.createClass({
         <header className='ocp-map__header'>
           <h1 className='ocp-map__title'>Open Contracting Map</h1>
           <div className='ocp-map__actions'>
-            <span className='ocp-map__actions-description'>View by</span>
 
             <Filter element='span' className='drop drop--down drop--align-left'>
 
