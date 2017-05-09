@@ -9,8 +9,8 @@ import omnivore from 'leaflet-omnivore';
 import Filter from '../components/filter';
 
 const mapTopoJSON = 'https://raw.githubusercontent.com/open-contracting-partnership/ocp-data/publish/oc-status/_map.json';
-const godiScores = 'http://index.okfn.org/api/entries.json';
-const godiSlugs = 'http://index.okfn.org/api/places.json';
+const godiScores = '/wp-content/themes/ocp-v1/endpoints/map-scores.php';
+const godiSlugs = '/wp-content/themes/ocp-v1/endpoints/map-slugs.php';
 
 const viewFilterMatrix = {
   all: 'Everything',
