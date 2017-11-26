@@ -329,6 +329,20 @@ var MapWidget = React.createClass({
     return <div><h3>Commitments</h3><ul>{content_ogp}</ul></div>;
   },
 
+  renderImpactStories: function (country) {
+    if (typeof country.impacts_stories === 'undefined' || !country.impacts_stories.length || country.impacts_stories[0].story_url.length <= 1) {
+      return;
+    }
+
+    let content = _.map(country.impacts_stories, (o, i) => {
+      return (
+        <li key={i}><a href={o.story_url} target='_blank'>{o.story_title}</a></li>
+      );
+    });
+
+    return <div><h3>Impact stories</h3><ul>{content}</ul></div>;
+  },
+
   render: function () {
     if (!this.state.fetchedData && !this.state.fetchingData) {
       return null;
@@ -371,6 +385,8 @@ var MapWidget = React.createClass({
               {this.renderInnovations(country.innovations)}
 
               {this.renderCommitments(country)}
+
+			  {this.renderImpactStories(country)}
 
               <a href={'http://survey.open-contracting.org/#/forms/oc-status/' + country.iso_a2.toLowerCase()} target='_blank' className={classnames('ocp-map__content-link', 'button', 'button--small')}>Improve the data</a>
             </div>
