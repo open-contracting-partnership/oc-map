@@ -378,8 +378,6 @@ var MapWidget = React.createClass({
               <a href='#' className='ocp-map__button-close' onClick={this.closeClickHandler}><span>Close map content</span></a>
               <h2>{country.name}</h2>
 
-              {this.renderGodi(country)}
-
               {this.renderPublisher(country.publishers)}
 
               {this.renderInnovations(country.innovations)}
