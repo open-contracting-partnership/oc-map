@@ -14,7 +14,7 @@ const godiSlugs = '/wp-content/themes/ocp-v1/endpoints/map-slugs.php';
 
 const viewFilterMatrix = {
   all: 'Everything',
-  ocds: 'Publishing open contracting data',
+  ocds: 'Using Open Contracting Data Standard',
   commitments: 'Related commitments',
   contracts: 'Innovation in contract monitoring and data use'
 };
@@ -283,7 +283,7 @@ var MapWidget = React.createClass({
 
   renderPublisher: function (publishers) {
     if (!publishers.length) {
-      return <div><h3>Publishing open contracting data</h3><p>No entity publishing data yet</p></div>;
+      return <div><h3>Using Open Contracting Data Standard</h3><p>No entity publishing data yet</p></div>;
     }
 
     let content = _.map(publishers, (o, i) => {
@@ -298,7 +298,7 @@ var MapWidget = React.createClass({
         </li>
       );
     });
-    return <div><h3>Publishing open contracting data</h3><ul>{content}</ul></div>;
+    return <div><h3>Using Open Contracting Data Standard</h3><ul>{content}</ul></div>;
   },
 
   renderInnovations: function (innovations) {
